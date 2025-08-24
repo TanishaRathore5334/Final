@@ -67,7 +67,6 @@ const sessionOptions={
 //   res.send(" hello i am root");
 // });
 
-
 app.use(session(sessionOptions));
 app.use(flash());
 
