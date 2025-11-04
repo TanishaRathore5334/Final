@@ -10,6 +10,7 @@ main()
   .catch((err) => {
     console.log(err);
   });
+
 async function main() {
   await mongoose.connect(MONGO_URL);
 }
@@ -19,4 +20,5 @@ const initDB = async () => {
    await Listing.insertMany(initdata.data);
   console.log("data was initialize");
 };
+
 initDB();
