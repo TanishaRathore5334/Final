@@ -43,6 +43,7 @@ const store=MongoStore.create({
   crypto:{
     secret: process.env.SECRET
   },
+ 
   touchAfter: 24*3600,
 })   
 store.on("error", ()=>{
@@ -100,6 +101,9 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("error.ejs", { message });
   // res.status(statusCode).send(message);
 });
+
+
+
 
 app.listen(8080, () => {
   console.log("server is listen to port 8080");
