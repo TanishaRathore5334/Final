@@ -56,10 +56,12 @@ module.exports.showListing=async (req, res) => {
            listing.image={url,filename};
            await listing.save();
          }
+          
           req.flash("success", "Listing Updated!");
           return res.redirect(`/listings/${id}`);
          
           }
+
           module.exports.destroyListing=async (req, res) => {
               let { id } = req.params;
               let deletedLising = await Listing.findByIdAndDelete(id);
